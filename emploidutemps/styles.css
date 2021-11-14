@@ -1,0 +1,15 @@
+body{
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.right{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+label{
+    text-align: right;
+}
