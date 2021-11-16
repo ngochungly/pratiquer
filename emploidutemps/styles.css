@@ -4,12 +4,20 @@ body{
     max-width: 1200px;
 }
 
+hr{
+    height: 0.5px;
+}
+
+label{
+    text-align: right;
+}
+
 .right{
     display: flex;
     justify-content: right;
     align-items: right;
 }
 
-label{
-    text-align: right;
+td{
+    width: 12.5%;
 }
