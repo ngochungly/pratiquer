@@ -22,7 +22,7 @@ function createRow(value, index, array) {
         const textnode1 = document.createTextNode("");
         const textnode2 = document.createTextNode("");
         tdnode1.setAttribute("id", value + "0" + j);
-        tdnode2.setAttribute("id", value + "3" + j);
+        tdnode2.setAttribute("id", value + "5" + j);
         tdnode1.appendChild(textnode1);
         tdnode2.appendChild(textnode2);
         tr1.appendChild(tdnode1);
@@ -39,28 +39,41 @@ function loadTableEmploi() {
 }
 
 function ajouterTache() {
-    let tache = document.getElementById("tache").value;
-    let tacheLength = tache.length;
     let jour = document.getElementById("jours").value;
     let temps = document.getElementById("temps").value;
+    let tache = document.getElementById("tache").value;
+    let tacheLength = tache.length;
+    let duree = document.getElementById("duree").value;
+    let couleur = document.getElementById("tacheCouleur").value;
 
     if (tacheLength == 0) {
-        document.getElementById("error").innerHTML = "Le champ Tache est obligatoire.";
-        document.getElementById("error").style.color = "red";
+        document.getElementById("error_info").innerHTML = "Le champ Tache est obligatoire.";
+        document.getElementById("error_info").style.color = "red";
         document.getElementById("tache").style.borderColor = "red";
     } else {
-        document.getElementById("error").innerHTML = "";
+        document.getElementById("error_info").innerHTML = "Une tâche a été ajoutée.";
+        document.getElementById("error_info").style.color = "blue";
         document.getElementById("tache").style.borderColor = null;
-        let jid = jours[jour];
-        let m = temps.slice(temps.length - 2);
-        let h = temps.slice(0, temps.length - 3);
-        if (m == "30"){
-            console.log(m);
-            tid = h + "3" + jid;
+        let jour_id = jours[jour];
+        let min = temps.slice(temps.length - 2);
+        let heure = temps.slice(0, temps.length - 3);
+        if (min == "30"){
+            cell_id = heure + "5" + jour_id;
         } else {
-            console.log(m);
-            tid = h + "0" + jid;
+            cell_id = heure + "0" + jour_id;
         }
-        document.getElementById(tid).innerHTML = tache;
+        document.getElementById(cell_id).innerHTML = tache;
+        document.getElementById(cell_id).style.color = "white";
+
+        let cell_id_num = Number(cell_id);
+        let i = Number(duree) / 30;
+        for (let j = 0; j < i; j++) {
+            k = 50*j;
+            cell_id_num_new = cell_id_num + k;
+            if (cell_id_num_new < 2300) {
+                cell_id = String(cell_id_num_new);
+                document.getElementById(cell_id).style.backgroundColor = couleur;
+            }
+        }
     }
 }

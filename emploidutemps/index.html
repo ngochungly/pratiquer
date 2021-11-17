@@ -17,7 +17,7 @@
         <form name="formTache">
             <div class="row">
                 <div class="col">
-                    <label for="jours">Jours:</label><br/>
+                    <label for="jours">Jours</label><br/>
                     <select id="jours" name="jours" class="form-select form-select-sm">
                         <option>Lundi</option>
                         <option>Mardi</option>
@@ -29,7 +29,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <label for="temps">Temps:</label><br/>
+                    <label for="temps">Temps</label><br/>
                     <select id="temps" name="temps" class="form-select form-select-sm">
                         <option>7h30</option>
                         <option>8h00</option>
@@ -60,11 +60,11 @@
                     </select>
                 </div>
                 <div class="col">
-                    <label for="tache">Tache:</label><br/>
+                    <label for="tache">Tache</label><br/>
                     <input type="text" id="tache" name="tache" class="form-control form-control-sm" min="5" max="50" required>
                 </div>
                 <div class="col">
-                    <label for="duree">Durée (min.):</label><br/>
+                    <label for="duree">Durée (min.)</label><br/>
                     <select id="duree" name="duree" class="form-select form-select-sm">
                         <option>30</option>
                         <option>60</option>
@@ -72,18 +72,23 @@
                         <option>120</option>
                     </select>
                 </div>
+                <div class="col">
+                    <label for="tacheCouleur">Couleur</label><br/>
+                    <input type="color" class="form-control form-control-sm form-control-color" id="tacheCouleur" name="tacheCouleur" value="#2DAE58">
+                </div>
             </div>
             <br>
             <div class="row">
                 <div class="col"></div>
-                <div class="col text-center">
-                    <div id="error"></div>
+                <div class="col">
+                    <div class="text-center" id="error_info"></div>
                 </div>
                 <div class="col right">
-                    <button type="button" class="btn btn-success btn-sm" onclick="ajouterTache()">Ajoutez</button> &nbsp;&nbsp;&nbsp;
-                    <button type="button" class="btn btn-success btn-sm" disabled onclick="">Sauvez</button>
+                    <button type="button" class="btn btn-success btn-sm" onclick="ajouterTache()">Ajoutez</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" class="btn btn-success btn-sm" disabled onclick="">Sauvez</button>&nbsp;&nbsp;
                 </div>
             </div>
+            
         </form>
         <hr>
 
