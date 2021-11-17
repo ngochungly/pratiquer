@@ -1,4 +1,5 @@
 const heure = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
+var jours = {"Lundi": 1, "Mardi": 2, "Mercredi": 3, "Jeudi": 4, "Vendredi": 5, "Samedi": 6, "Dimanche": 7};
 
 //document.getElementById("table_body").onload = function() {loadTableEmploi()};
 loadTableEmploi();
@@ -35,4 +36,31 @@ function createRow(value, index, array) {
 
 function loadTableEmploi() {
     heure.forEach(createRow);
+}
+
+function ajouterTache() {
+    let tache = document.getElementById("tache").value;
+    let tacheLength = tache.length;
+    let jour = document.getElementById("jours").value;
+    let temps = document.getElementById("temps").value;
+
+    if (tacheLength == 0) {
+        document.getElementById("error").innerHTML = "Le champ Tache est obligatoire.";
+        document.getElementById("error").style.color = "red";
+        document.getElementById("tache").style.borderColor = "red";
+    } else {
+        document.getElementById("error").innerHTML = "";
+        document.getElementById("tache").style.borderColor = null;
+        let jid = jours[jour];
+        let m = temps.slice(temps.length - 2);
+        let h = temps.slice(0, temps.length - 3);
+        if (m == "30"){
+            console.log(m);
+            tid = h + "3" + jid;
+        } else {
+            console.log(m);
+            tid = h + "0" + jid;
+        }
+        document.getElementById(tid).innerHTML = tache;
+    }
 }
