@@ -64,15 +64,19 @@ function ajouterTache() {
         }
         document.getElementById(cell_id).innerHTML = tache;
         document.getElementById(cell_id).style.color = "white";
+        document.getElementById(cell_id).style.verticalAlign = "middle";
 
         let cell_id_num = Number(cell_id);
         let i = Number(duree) / 30;
-        for (let j = 0; j < i; j++) {
+        document.getElementById(cell_id).setAttribute("rowspan", String(i));
+        document.getElementById(cell_id).style.backgroundColor = couleur;
+        for (let j = 1; j < i; j++) {
             k = 50*j;
             cell_id_num_new = cell_id_num + k;
             if (cell_id_num_new < 2300) {
                 cell_id = String(cell_id_num_new);
-                document.getElementById(cell_id).style.backgroundColor = couleur;
+                const elmnt = document.getElementById(cell_id);
+                elmnt.remove();
             }
         }
     }
