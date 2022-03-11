@@ -1,6 +1,11 @@
 body {
     background-color: #eee;
   }
+.title {
+  text-align: center;
+  color: #003d99;
+  font-family: 'Papyrus', cursive;
+}
 .hello {
   opacity: 1 !important;
 }
@@ -14,16 +19,19 @@ body {
 }
 .full .content {
   background-color: rgba(0,0,0,0.75) !important;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  left: 33%;
+  top: 0;
+  /* height: 100%; */
+  width: 34%;
   display: grid;
 }
 .full .content img {
   left: 50%;
   transform: translate3d(0, 0, 0);
   animation: zoomin 1s ease;
-  
-  max-width: 30%;
+  width: 100%;
+  /* height: inherit; */
   margin: auto;
 }
 .byebye {
