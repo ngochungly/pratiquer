@@ -14,11 +14,11 @@
         <br>
         <h4>Ajoutez une tache</h4>
 
-        <form name="formTache">
+        <form action="./TacheAjouter" method="post" name="formTache" >
             <div class="row">
                 <div class="col">
-                    <label for="jours">Jours</label><br/>
-                    <select id="jours" name="jours" class="form-select form-select-sm">
+                    <label for="jour">Jour</label><br/>
+                    <select id="jour" name="jour" class="form-select form-select-sm">
                         <option>Lundi</option>
                         <option>Mardi</option>
                         <option>Mercredi</option>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col">
                     <label for="tacheCouleur">Couleur</label><br/>
-                    <input type="color" class="form-control form-control-sm form-control-color" id="tacheCouleur" name="tacheCouleur" value="#2DAE58">
+                    <input type="color" class="form-control form-control-sm form-control-color" id="couleur" name="couleur" value="#2DAE58">
                 </div>
             </div>
             <br>
@@ -84,7 +84,7 @@
                     <div class="text-center" id="error_info"></div>
                 </div>
                 <div class="col right">
-                    <button type="button" class="btn btn-success btn-sm" onclick="ajouterTache()">Ajoutez</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-success btn-sm" onclick="ajouterTache()">Ajoutez</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="button" class="btn btn-success btn-sm" disabled onclick="">Sauvez</button>&nbsp;&nbsp;
                 </div>
             </div>

@@ -39,20 +39,19 @@ function loadTableEmploi() {
 }
 
 function ajouterTache() {
-    let jour = document.getElementById("jours").value;
+    let jour = document.getElementById("jour").value;
     let temps = document.getElementById("temps").value;
     let tache = document.getElementById("tache").value;
     let tacheLength = tache.length;
     let duree = document.getElementById("duree").value;
-    let couleur = document.getElementById("tacheCouleur").value;
+    let couleur = document.getElementById("couleur").value;
 
     if (tacheLength == 0) {
         document.getElementById("error_info").innerHTML = "Le champ Tache est obligatoire.";
         document.getElementById("error_info").style.color = "red";
         document.getElementById("tache").style.borderColor = "red";
     } else {
-        document.getElementById("error_info").innerHTML = "Une tâche a été ajoutée.";
-        document.getElementById("error_info").style.color = "blue";
+        
         document.getElementById("tache").style.borderColor = null;
         let jour_id = jours[jour];
         let min = temps.slice(temps.length - 2);
@@ -79,5 +78,6 @@ function ajouterTache() {
                 elmnt.remove();
             }
         }
+
     }
 }
